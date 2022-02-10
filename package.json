@@ -1,0 +1,24 @@
+{
+  "name": "mongotestes",
+  "version": "1.0.0",
+  "description": "Testes e aprendizado de mongoDB",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gui-Voigt/MongoTestes.git"
+  },
+  "scripts": {
+    "start": "nodemon ./index.js localhost 3000"
+  },
+  "author": "GVoigt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gui-Voigt/MongoTestes/issues"
+  },
+  "homepage": "https://github.com/Gui-Voigt/MongoTestes#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.0.8",
+    "nodemon": "^2.0.15"
+  }
+}
