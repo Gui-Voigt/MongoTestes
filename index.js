@@ -2,6 +2,9 @@
 const express = require('express');
 const app = express(); //executa express como uma função
 
+const dbconnect = require("./dbconnect")
+const Person = require('./models/Person')
+
 //forma de ler JSON / middlewares
 app.use(
     express.urlencoded({
@@ -20,7 +23,6 @@ app.get('/', (req, res) => {
 
 //entregar uma porta
 const port = 3000
-const dbconnect = require("./dbconnect")
 
 dbconnect()
 .then( 
@@ -28,6 +30,6 @@ dbconnect()
         app.listen(port)
         console.log("Conectado ao banco de dados. Aplicação iniciada na porta " + port)
     })
-.catch( (err) => { console.error(err) })
+.catch( (err) => { console.error(err) });
 
 
