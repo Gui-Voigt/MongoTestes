@@ -2,8 +2,8 @@
 const express = require('express');
 const app = express(); //executa express como uma função
 
+const personRoutes = require('./routes/personRoutes')
 const dbconnect = require("./dbconnect")
-const Person = require('./models/Person')
 
 //forma de ler JSON / middlewares
 app.use(
@@ -12,6 +12,10 @@ app.use(
     }),
 )
 app.use(express.json())
+
+
+//rotas da API
+app.use('/person', personRoutes) //tudo o que vier de /person será redirecionado para personRoutes
 
 //rota inicial / endpoint
 app.get('/', (req, res) => {
